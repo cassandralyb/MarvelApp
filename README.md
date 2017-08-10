@@ -1,1 +1,2 @@
-# MarvelApp
+# MarvelGiph
+Marvel-Giph Project One
