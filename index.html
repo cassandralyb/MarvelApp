@@ -54,14 +54,14 @@
 
 /* this is the search button function*/
     $("#searchButton").on("click", function() {
-
+console.log("i clicked it");
 /* this is the person searched by the user when the user clickes the "user-search" button */
-      var person = $("#searchInput").val().trim();
+      var character = $("#searchInput").val().trim();
 
 
 /* this is the giphyURL, which captures the person searched by the user */
-      var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" +
-        person + "&api_key=dc6zaTOxFJmzC&limit=3";
+      var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        character + "&api_key=dc6zaTOxFJmzC&limit=3";
 
 /* this is the AJAX call for the giphyURL */
       $.ajax({
@@ -69,28 +69,22 @@
           method: "GET"
         })
         .done(function(response) {
+          console.log(response)
           var results = response.data;
 
           for (var i = 0; i < results.length; i++) {
-            var gifDiv = $("<div class='item'>");
-
-            var rating = results[i].rating;
-
-            var p = $("<p>").text("Rating: " + rating);
+            
 
             var personImage = $("<img>");
             personImage.attr("src", results[i].images.fixed_height.url);
 
-            gifDiv.prepend(p);
-            gifDiv.prepend(personImage);
-
-            $("#showGifs").prepend(gifDiv);
-            console.log(gifDiv)
+            $("#showGifs").prepend(personImage);
           }
+          
         });
 
 /* this is the person searched by the user when the user clickes the "user-search" button */
-      var person = $(this).attr("user-search");
+      var person = $(this).attr("searchInput");
 
 /* this is the marvelURL, which captures the person searched by the user */
       var marvelURL = "http://gateway.marvel.com:443/v1/public/characters?name=" +
