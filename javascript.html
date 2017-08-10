@@ -74,21 +74,6 @@
           }
         });
 
-/* this is the person searched by the user when the user clickes the "user-search" button */
-      var person = $(this).attr("user-search");
 
-/* this is the marvelURL, which captures the person searched by the user */
-      var marvelURL = "https://gateway.marvel.com:443/v1/public/characters?name=" +
-        person + "&apikey=7b3c258aeabb823fef48eaa48dbfbbdc";
-
- /* this is the AJAX call for the marvelURL */
-      $.ajax({
-          url: marvelURL,
-          method: "GET"
-         }).done(function(response) {
-		      console.log(response);
-		    });
-
-   });
 
  </script>
