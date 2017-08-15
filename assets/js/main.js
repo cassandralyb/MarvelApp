@@ -57,3 +57,33 @@
     } 
 
   });
+
+$( function() {
+    var availableTags = [
+      "Spiderman",
+      "Iron Man",
+      "Captain America",
+      "Hulk",
+      "Deadpool",
+      "Black Widow",
+      "Wolverine",
+      "Cable",
+      "Iron Fist",
+      "Daredevil",
+      "Quicksilver",
+      "Thor",
+      "Clint Barton",
+      "X-23",
+      "Thanos",
+      "Black Panther",
+      "Wanda Maximoff",
+      "Cyclops",
+      "Groot",
+      "Ghost Rider",
+      "Magneto",
+      "Jean Grey"
+    ];
+    $( "#searchInput" ).autocomplete({
+      source: availableTags
+    });
+  } );
