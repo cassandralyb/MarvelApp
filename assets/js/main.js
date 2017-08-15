@@ -28,9 +28,44 @@
         });
 /* this is the person searched by the user when the user clickes the "user-search" button */
       var person = $("#searchInput").val().trim();
-/* this is the marvelURL, which captures the person searched by the user */
-      var marvelURL = "https://gateway.marvel.com:443/v1/public/characters?name=" +
-        person + "&apikey=7b3c258aeabb823fef48eaa48dbfbbdc";
+
+      
+
+        var PRIV_KEY = "privatekey";
+        var API_KEY = "7b3c258aeabb823fef48eaa48dbfbbdc";
+
+        function getMarvelResponse() {
+        // you need a new ts every request                                                                                    
+        var ts = new Date().getTime();
+        var hash = CryptoJS.MD5(ts + PRIV_KEY + API_KEY);
+      
+        // the api deals a lot in ids rather than just the strings you want to use
+        var characterId = '1009718'; // wolverine                                                                             
+
+        var url = 'http://gateway.marvel.com:80/v1/public/comics';
+            alert(hash)
+            alert(url)
+
+          console.log(url);
+              $.getJSON(url, {
+                ts: ts,
+                apikey: API_KEY,
+                hash: hash,
+                characters: characterId
+                })
+                .done(function(data) {
+                  // sort of a long dump you will need to sort through
+                  console.log(data);
+                })
+                .fail(function(err){
+                  // the error codes are listed on the dev site
+                  console.log(err);
+                });
+            };
+
+            getMarvelResponse();
+
+
  /* this is the AJAX call for the marvelURL */
       $.ajax({
           url: marvelURL,
