@@ -37,7 +37,7 @@
           method: "GET"
         })
         .done(function(response) {
-          alert("marvelAPI");
+          console.log("marvelAPI");
           var results = response.data;
           for (var i = 0; i < results.length; i++) {
             

@@ -27,6 +27,14 @@ body {
     text-shadow: 0px 0px white;
 }
 
+.media-heading {
+    color: white;
+}
+
+.marvelName , .marvelStories , .marvelDescription {
+    color: white;
+}
+
 #searchbutton , #searchInput , #resetButton {
     color: white;
     background-color: #B83A27;
