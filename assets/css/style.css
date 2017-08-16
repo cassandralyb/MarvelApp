@@ -11,6 +11,11 @@ h1 {
     text-shadow: 1px 1px white
 }
 
+th, td {
+    border-bottom: 1px solid #FFFFFF;
+    color: white;
+}
+
 body {
     padding: 20px;
     font-family: 'Open Sans', sans-serif;
