@@ -31,7 +31,7 @@
         });
 
     var character = $("#searchInput").val().trim();
-    var queryURL = "http://www.omdbapi.com/?t=" + character + "&y=&plot=short&apikey=40e9cece";
+    var queryURL = "https://www.omdbapi.com/?t=" + character + "&y=&plot=short&apikey=40e9cece";
 
     $.ajax({
       url: queryURL,
